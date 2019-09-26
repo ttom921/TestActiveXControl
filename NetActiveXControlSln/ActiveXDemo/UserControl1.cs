@@ -1,17 +1,19 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Runtime.InteropServices;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
-namespace MyDateControl
+namespace ActiveXDemo
 {
-    [ProgId("MyDateControl.MyDateControlUI")]
-    [ClassInterface(ClassInterfaceType.AutoDual)]
-    [Guid("BB40E1F5-0E6C-47B3-A665-0D3FBDE1D01C")]
-    [ComVisible(true)]
-    public partial class MyDateControlUI: UserControl,IObjectSafety
+    [Guid("4F94C530-6CE1-4F66-A530-6AE813BED494"), ProgId("ActiveXDemo.UserControl1"), ComVisible(true)]
+    public partial class UserControl1: UserControl,IObjectSafety
     {
-        #region IObjectSafety 成员
+        #region IObjectSafety 成员 格式固定
 
         private const string _IID_IDispatch = "{00020400-0000-0000-C000-000000000046}";
         private const string _IID_IDispatchEx = "{a6ef9860-c720-11d0-9337-00a0c90dcaa9}";
@@ -27,7 +29,6 @@ namespace MyDateControl
 
         private bool _fSafeForScripting = true;
         private bool _fSafeForInitializing = true;
-
 
         public int GetInterfaceSafetyOptions(ref Guid riid, ref int pdwSupportedOptions, ref int pdwEnabledOptions)
         {
@@ -63,21 +64,18 @@ namespace MyDateControl
         public int SetInterfaceSafetyOptions(ref Guid riid, int dwOptionSetMask, int dwEnabledOptions)
         {
             int Rslt = E_FAIL;
-
             string strGUID = riid.ToString("B");
             switch (strGUID)
             {
                 case _IID_IDispatch:
                 case _IID_IDispatchEx:
-                    if (((dwEnabledOptions & dwOptionSetMask) == INTERFACESAFE_FOR_UNTRUSTED_CALLER) &&
-                            (_fSafeForScripting == true))
+                    if (((dwEnabledOptions & dwOptionSetMask) == INTERFACESAFE_FOR_UNTRUSTED_CALLER) && (_fSafeForScripting == true))
                         Rslt = S_OK;
                     break;
                 case _IID_IPersistStorage:
                 case _IID_IPersistStream:
                 case _IID_IPersistPropertyBag:
-                    if (((dwEnabledOptions & dwOptionSetMask) == INTERFACESAFE_FOR_UNTRUSTED_DATA) &&
-                            (_fSafeForInitializing == true))
+                    if (((dwEnabledOptions & dwOptionSetMask) == INTERFACESAFE_FOR_UNTRUSTED_DATA) && (_fSafeForInitializing == true))
                         Rslt = S_OK;
                     break;
                 default:
@@ -89,22 +87,14 @@ namespace MyDateControl
         }
 
         #endregion
-        public MyDateControlUI()
+        public UserControl1()
         {
             InitializeComponent();
         }
 
-        private void cmdDisplayToday_Click(object sender, System.EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(DateTime.Today.ToString("yyyy/MM/dd"), "Today");
+            MessageBox.Show("Click!!!!version:000000");
         }
-
-        private void cmdGetOSVer_Click(object sender, System.EventArgs e)
-        {
-            RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
-            MessageBox.Show(key.GetValue("BuildLabEx").ToString(), "OS Build Ver");
-            key = null;
-        }
-
     }
 }

@@ -7,6 +7,6 @@
 .Set CompressionType=MSZIP
 .Set CompressionLevel=7
 .Set CompressionMemory=21
-.Set CabinetNameTemplate="MyDateControl.CAB"
+.Set CabinetNameTemplate="ActiveXDemoSetup.CAB"
 "installer.inf"
-"MyDateControl.Setup.msi"
+"ActiveXDemoSetup.msi"

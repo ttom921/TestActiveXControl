@@ -2,7 +2,7 @@
 hook1=hook1
 
 [hook1]
-run=msiexec /i %EXTRACT_DIR%\MyDateControl.Setup.msi /qn
+run=msiexec /i %EXTRACT_DIR%\ActiveXDemoSetup.msi /qn
 
 [Version]
 Signature= "$CHICAGO$"

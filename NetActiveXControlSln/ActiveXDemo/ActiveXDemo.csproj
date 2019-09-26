@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8343CDA6-774B-4764-95C3-47937260FAF4}</ProjectGuid>
+    <ProjectGuid>{790FCB91-66F6-4CDD-ABFA-78C33B078CB1}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>MyDateControl</RootNamespace>
-    <AssemblyName>MyDateControl</AssemblyName>
+    <RootNamespace>ActiveXDemo</RootNamespace>
+    <AssemblyName>ActiveXDemo</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>true</RegisterForComInterop>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,12 +29,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>mydatecontrol.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -48,22 +43,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IObjectSafety.cs" />
-    <Compile Include="MyDateControlUI.cs">
+    <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyDateControlUI.Designer.cs">
-      <DependentUpon>MyDateControlUI.cs</DependentUpon>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MyDateControlUI.resx">
-      <DependentUpon>MyDateControlUI.cs</DependentUpon>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="mydatecontrol.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
