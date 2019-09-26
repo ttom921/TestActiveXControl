@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyControl", "MyControl\MyCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDateControl", "MyDateControl\MyDateControl.csproj", "{8343CDA6-774B-4764-95C3-47937260FAF4}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MyDateControl.Setup", "MyDateControl.Setup\MyDateControl.Setup.vdproj", "{DCB92EF5-DFE1-4CEC-9EA9-94B59DBB98A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{8343CDA6-774B-4764-95C3-47937260FAF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8343CDA6-774B-4764-95C3-47937260FAF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8343CDA6-774B-4764-95C3-47937260FAF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCB92EF5-DFE1-4CEC-9EA9-94B59DBB98A8}.Debug|Any CPU.ActiveCfg = Debug
+		{DCB92EF5-DFE1-4CEC-9EA9-94B59DBB98A8}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
